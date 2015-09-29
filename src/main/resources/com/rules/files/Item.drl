@@ -1,0 +1,11 @@
+
+import com.pandora.api.facts.Item;
+
+dialect "java"
+
+rule "Apply discount if Sku match"
+when
+  item:Item (sku  == '1237')
+then
+  item.setPrice(item.getPrice()*0.9);
+end
